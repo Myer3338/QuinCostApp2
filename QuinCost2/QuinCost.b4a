@@ -1,0 +1,77 @@
+﻿Build1=Default,b4a.example
+File1=Logo.jpg
+File2=QuinCost.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=core
+Library2=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Starter
+NumberOfFiles=2
+NumberOfLibraries=2
+NumberOfModules=1
+Version=12.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: QuinCost
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+#End Region
+
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private WebView1 As WebView
+	Private click As Boolean
+	Private Texto As Label
+	Private pnlImagen As Panel
+	Private Abrir As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("QuinCost")
+'	
+	click = False
+	
+	If click Then
+		Texto.Visible = False
+		Abrir.Visible = False
+		pnlImagen.Visible = False
+		WebView1.LoadUrl("https://airtable.com/shrX5unJMScUbhT7t")
+	
+	Else
+		WebView1.Visible = False
+		
+	End If
+	
+End Sub
+
+Private Sub Abrir_Click
+	
+	click = True
+	
+	If click Then
+		Texto.Visible = False
+		Abrir.Visible = False
+		pnlImagen.Visible = False
+		WebView1.Visible = True
+		WebView1.LoadUrl("https://airtable.com/shrX5unJMScUbhT7t")
+			
+	End If
+	
+End Sub
